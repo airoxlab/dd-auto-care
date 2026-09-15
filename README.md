@@ -1,6 +1,6 @@
 # D & D Auto Care
 
-Single-page website for D & D Auto Care — a car detailing service in Sandusky County, northwest Ohio. Interior and exterior detailing, open weekday evenings until 9 PM and from 7 AM on weekends.
+Single-page website for D & D Auto Care — a mobile mechanic and car detailing service in Sandusky County, northwest Ohio. Repairs, maintenance and diagnostics at the customer's location (everything except transmission internals and body work), plus interior and exterior detailing. Open weekday evenings until 9 PM and from 7 AM on weekends.
 
 - **Phone (call/text):** (419) 601-4587
 - **Area:** Sandusky County, Ohio (service-area business — no public street address listed)
@@ -18,11 +18,11 @@ Open `index.html` in a browser, or deploy the folder as-is to any static host (G
 
 Midnight blue with a wax-shine gold accent, taken from the mirror-black Cadillac in the business's own hero photo; the light theme resolves to warm cream and bronze rather than a flat inversion. Type is Sora (display) / Outfit (body). Palette is fully tokenised on `:root` and redefined for light mode under both `@media (prefers-color-scheme: light)` and `:root[data-theme="light"]`, so the page follows the OS theme and an explicit toggle. A "D&D" monogram stands in for a logo, since the business has no logo mark published anywhere.
 
-Six sections: hero, services, work gallery, hours, reviews, contact — plus an open-late strip and footer. The hours table is treated as the lead differentiator (weekend rows highlighted), because evening and weekend availability is the most distinctive verifiable fact about this business.
+Seven sections: hero, services, maintenance (mobile mechanic scope: routine maintenance, brakes/steering/suspension, engine/electrical/cooling, plus what is not covered and how a mobile job works), work gallery, hours, reviews, contact — plus a strip and footer. The hours table is treated as the lead differentiator (weekend rows highlighted), because evening and weekend availability is the most distinctive verifiable fact about this business.
 
 ## Data sources
 
-Everything on this page comes from the business's public **Google Business Profile**: name, phone number, category, opening hours, wheelchair-accessibility note, 5.0 rating, the customer review and the owner's reply, and the three photos.
+The mechanical scope — "everything to a vehicle besides transmission internals and cosmetic work" — was stated directly by the owner (Sep 2026); the maintenance section lists common jobs within that scope. Everything else on this page comes from the business's public **Google Business Profile**: name, phone number, category, opening hours, wheelchair-accessibility note, 5.0 rating, the customer review and the owner's reply, and the three photos.
 
 The business was identified by matching the phone number (419) 601-4587 against the Google Maps listing — several unrelated Ohio businesses share the "D & D Auto" name, and all were excluded. Location was derived from the listing's map coordinates (41.389, -83.362 → Madison Township, Sandusky County) since no street address is published; the site therefore says "Sandusky County" rather than naming a town.
 

@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="D & D Auto Care — car detailing in Sandusky County, Ohio. Interior and exterior detailing, open evenings until 9 PM and 7 AM weekends. Rated 5.0 on Google. Call (419) 601-4587.">
+<meta name="description" content="D &amp; D Auto Care — mobile mechanic and car detailing in Sandusky County, Ohio. Repairs, maintenance and diagnostics done at your location, everything except transmission internals and body work, plus interior and exterior detailing. Open evenings until 9 PM and 7 AM weekends. Rated 5.0 on Google. Call (419) 601-4587.">
 <meta name="theme-color" content="#0D1420">
-<title>D &amp; D Auto Care</title>
+<title>D &amp; D Auto Care | Mobile Mechanic &amp; Detailing, Sandusky County OH</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap">
@@ -191,6 +191,28 @@
   .svc p { margin-top: 0.55rem; font-size: 0.95rem; color: var(--mute); }
 
   /* ============ GALLERY ============ */
+
+  /* ---- maintenance ---- */
+  .maint { background: var(--night-deep); border-block: 1px solid var(--edge-solid); }
+  .maint-grid { display: grid; gap: 1.1rem; margin-top: 2.5rem; }
+  .mcol { background: var(--panel); border: 1px solid var(--edge-solid); border-radius: 1rem; padding: 1.5rem 1.45rem; }
+  .mcol h3 { margin: 0 0 0.9rem; font-family: var(--display); font-size: 1.1rem; color: var(--gold-hi); }
+  .checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+  .checks li { position: relative; padding-left: 1.7rem; color: var(--ice); font-size: 0.98rem; line-height: 1.45; }
+  .checks li::before { content: ""; position: absolute; left: 0; top: 0.28em; width: 1.05rem; height: 1.05rem; border-radius: 50%; background: var(--gold); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2314100A' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E"); background-size: 0.7rem; background-repeat: no-repeat; background-position: center; }
+  .maint-foot { display: grid; gap: 1.1rem; margin-top: 1.1rem; }
+  .maint-foot .not, .maint-foot .how { border-radius: 1rem; padding: 1.5rem 1.45rem; }
+  .maint-foot .not { background: var(--panel); border: 1px dashed var(--gold); }
+  .maint-foot .not h3, .maint-foot .how h3 { margin: 0 0 0.8rem; font-family: var(--display); font-size: 1.1rem; }
+  .maint-foot .not h3 { color: var(--gold-hi); }
+  .maint-foot .not p { margin: 0 0 0.7rem; color: var(--mute); font-size: 0.97rem; }
+  .maint-foot .not p b { color: var(--ice); }
+  .maint-foot .how { background: var(--gold); color: var(--on-gold); }
+  .maint-foot .how h3 { color: var(--on-gold); }
+  .maint-foot .how ol { margin: 0 0 1.2rem; padding-left: 1.2rem; display: grid; gap: 0.55rem; font-size: 0.97rem; }
+  .maint-foot .how .btn-solid { background: var(--night); color: var(--ice); border-color: var(--night); }
+  :root:not([data-theme="dark"]) .maint-foot .how .btn-solid { background: var(--ice); color: #fff; border-color: var(--ice); }
+  @media (min-width: 760px) { .maint-grid { grid-template-columns: repeat(3, 1fr); } .maint-foot { grid-template-columns: 3fr 2fr; } }
   .work { background: var(--night-deep); border-block: 1px solid var(--edge-solid); }
   .work-grid { display: grid; gap: 1rem; margin-top: 2.5rem; }
   @media (min-width: 720px) { .work-grid { grid-template-columns: repeat(3, 1fr); } }
@@ -259,6 +281,7 @@
       </a>
       <nav class="top" aria-label="Sections">
         <a href="#services">Services</a>
+        <a href="#maintenance">Maintenance</a>
         <a href="#work">Our work</a>
         <a href="#hours">Hours</a>
         <a href="#reviews">Reviews</a>
@@ -276,16 +299,17 @@
     <div class="wrap hero-grid">
       <div>
         <span class="stars-badge"><span class="s" aria-hidden="true">★★★★★</span> <span>Rated <b>5.0</b> on Google</span></span>
-        <h1 id="h1">Your car, back to <span class="g">showroom clean.</span></h1>
-        <p class="sub">Car detailing in Sandusky County, Ohio — interiors reset, paint brought back to a deep shine. Open evenings until 9&nbsp;PM and from 7&nbsp;AM on weekends, so your car gets done around your schedule.</p>
+        <h1 id="h1">Everything your vehicle needs, <span class="g">done where it sits.</span></h1>
+        <p class="sub">Mobile mechanic and detailing in Sandusky County, Ohio. Repairs, maintenance and diagnostics at your driveway or workplace &mdash; everything on a vehicle except transmission internals and body work &mdash; plus interior and exterior detailing. Open evenings until 9&nbsp;PM and from 7&nbsp;AM on weekends, so the work gets done around your schedule, not ours.</p>
         <div class="ctas">
           <a class="btn btn-solid" href="tel:+14196014587">Call (419) 601-4587</a>
-          <a class="btn btn-line" href="#hours">See hours</a>
+          <a class="btn btn-line" href="#maintenance">What we cover</a>
         </div>
         <p class="hero-facts">
-          <span aria-hidden="true">🌙</span><span>Open till 9 PM daily</span>
-          <span aria-hidden="true">🧽</span><span>Inside &amp; out</span>
-          <span aria-hidden="true">📍</span><span>Sandusky County</span>
+          <span><span aria-hidden="true">🔧</span> Repair &amp; maintenance</span>
+          <span><span aria-hidden="true">🧽</span> Detailing</span>
+          <span><span aria-hidden="true">🌙</span> Open till 9 PM</span>
+          <span><span aria-hidden="true">📍</span> We come to you</span>
         </p>
       </div>
       <figure class="hero-art">
@@ -299,8 +323,9 @@
   <!-- ============ STRIP ============ -->
   <div class="strip">
     <div class="wrap strip-row">
-      <span>Interior detailing</span>
-      <span>Exterior detailing</span>
+      <span>Mobile repair</span>
+      <span>Maintenance</span>
+      <span>Detailing</span>
       <span>Evenings &amp; weekends</span>
     </div>
   </div>
@@ -309,9 +334,14 @@
   <section id="services" aria-labelledby="h2s">
     <div class="wrap">
       <p class="eyebrow">What we do</p>
-      <h2 id="h2s">Detailing that shows.</h2>
-      <p class="lead">Straightforward car care from a small local shop — the kind where the person who answers the phone is the person doing the work.</p>
+      <h2 id="h2s">One call for the mechanical side and the clean side.</h2>
+      <p class="lead">Straightforward auto care from a small local outfit &mdash; the person who answers the phone is the person under the hood and behind the buffer. We come to you.</p>
       <div class="svc-grid">
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.5 5.5a4 4 0 0 0-5 5L4 16l4 4 5.5-5.5a4 4 0 0 0 5-5l-2.5 2.5-2-2z"/></svg></div>
+          <h3>Mobile repair &amp; maintenance</h3>
+          <p>Brakes, batteries, oil, belts, cooling, suspension, diagnostics and more &mdash; done at your location. Everything except transmission internals and body work.</p>
+        </div>
         <div class="svc">
           <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 13l2-5.5A2 2 0 0 1 6.9 6h10.2a2 2 0 0 1 1.9 1.5L21 13"/><path d="M3 13h18v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4Z"/><circle cx="7" cy="15.5" r="0.6"/><circle cx="17" cy="15.5" r="0.6"/></svg></div>
           <h3>Exterior detailing</h3>
@@ -322,10 +352,68 @@
           <h3>Interior detailing</h3>
           <p>Seats, carpets, dash, vents and console cleaned out properly, so the cabin looks and feels reset.</p>
         </div>
-        <div class="svc">
-          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></svg></div>
-          <h3>Hours that fit</h3>
-          <p>Weekdays from 3 PM to 9 PM and weekends from 7 AM — book after work or first thing Saturday.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2b. MAINTENANCE ============ -->
+  <section id="maintenance" class="maint" aria-labelledby="h2m">
+    <div class="wrap">
+      <p class="eyebrow">Mobile mechanic</p>
+      <h2 id="h2m">If it's on the vehicle, we work on it.</h2>
+      <p class="lead">Repairs and routine maintenance at your driveway, your workplace, or wherever the vehicle is parked. Two things we don't touch: transmission internals and body or cosmetic work. Everything else, call.</p>
+      <div class="maint-grid">
+        <div class="mcol">
+          <h3>Routine maintenance</h3>
+          <ul class="checks">
+            <li>Oil &amp; filter changes</li>
+            <li>Air, cabin &amp; fuel filters</li>
+            <li>Fluid checks, top-offs &amp; flushes</li>
+            <li>Belts &amp; hoses</li>
+            <li>Spark plugs &amp; tune-ups</li>
+            <li>Wiper blades &amp; bulbs</li>
+            <li>Tire rotation</li>
+            <li>Scheduled-service intervals</li>
+          </ul>
+        </div>
+        <div class="mcol">
+          <h3>Brakes, steering &amp; suspension</h3>
+          <ul class="checks">
+            <li>Brake pads &amp; rotors</li>
+            <li>Calipers, lines &amp; brake fluid</li>
+            <li>Shocks &amp; struts</li>
+            <li>Ball joints, tie rods &amp; control arms</li>
+            <li>Wheel bearings &amp; hubs</li>
+            <li>Sway bar links &amp; bushings</li>
+          </ul>
+        </div>
+        <div class="mcol">
+          <h3>Engine, electrical &amp; cooling</h3>
+          <ul class="checks">
+            <li>Check-engine light diagnostics</li>
+            <li>Batteries, alternators &amp; starters</li>
+            <li>Radiators, water pumps &amp; thermostats</li>
+            <li>Sensors, ignition coils &amp; wiring</li>
+            <li>Exhaust &amp; oxygen sensors</li>
+            <li>A/C &amp; heat</li>
+            <li>No-start &amp; drivability problems</li>
+          </ul>
+        </div>
+      </div>
+      <div class="maint-foot">
+        <div class="not">
+          <h3>What we don't do</h3>
+          <p><b>Transmission internals.</b> Rebuilds and internal transmission work go to a transmission specialist &mdash; we'll tell you straight if that's what it needs.</p>
+          <p><b>Body &amp; cosmetic work.</b> Dents, paint and collision repair are a body shop's job. Getting the paint to shine again is ours &mdash; see detailing.</p>
+        </div>
+        <div class="how">
+          <h3>How a mobile job works</h3>
+          <ol>
+            <li><b>Call or text</b> with the year, make, model and what it's doing.</li>
+            <li><b>We come to the vehicle</b> &mdash; driveway, work lot, wherever it's parked &mdash; evenings and weekends included.</li>
+            <li><b>You get a straight answer</b> on what it needs before any work starts.</li>
+          </ol>
+          <a class="btn btn-solid" href="tel:+14196014587">Call (419) 601-4587</a>
         </div>
       </div>
     </div>
@@ -335,7 +423,7 @@
   <section id="work" class="work" aria-labelledby="h2w">
     <div class="wrap">
       <p class="eyebrow">Our work</p>
-      <h2 id="h2w">Recent details.</h2>
+      <h2 id="h2w">Recent detailing work.</h2>
       <p class="lead">A few cars that have been through the shop — inside and out.</p>
       <div class="work-grid">
         <figure class="shot">
@@ -412,9 +500,9 @@
   <!-- ============ 6. CONTACT ============ -->
   <section id="contact" class="contact" aria-labelledby="h2c">
     <div class="wrap">
-      <p class="eyebrow">Book a detail</p>
+      <p class="eyebrow">Book a job</p>
       <h2 id="h2c">Give us a call.</h2>
-      <p class="lead">Tell us what you're driving and what it needs — interior, exterior, or the full reset — and we'll find you a slot.</p>
+      <p class="lead">Tell us what you're driving and what it needs &mdash; a repair, routine maintenance, a detail, or all three &mdash; and we'll find you a slot and come to you.</p>
       <div class="ctas">
         <a class="btn btn-solid" href="tel:+14196014587">Call (419) 601-4587</a>
         <a class="btn btn-line" href="sms:+14196014587">Send a text</a>
@@ -426,7 +514,7 @@
         </div>
         <div class="card">
           <h3>Area</h3>
-          <p>Sandusky County and the surrounding northwest Ohio area.</p>
+          <p>Mobile service across Sandusky County and the surrounding northwest Ohio area &mdash; we come to the vehicle.</p>
         </div>
         <div class="card">
           <h3>Accessibility</h3>
@@ -440,10 +528,10 @@
 <footer class="site">
   <div class="wrap">
     <div class="fb">D &amp; D Auto Care</div>
-    <p>Car detailing &middot; Sandusky County, Ohio</p>
+    <p>Mobile mechanic &middot; Maintenance &middot; Detailing &middot; Sandusky County, Ohio</p>
     <p><a href="tel:+14196014587">(419) 601-4587</a></p>
     <p class="disc">
-      Business name, phone number, category, opening hours, accessibility information, rating, review text, and photos are sourced from the company's public Google Business Profile. No prices, service packages, guarantees, or credentials have been added — call to confirm what's offered and current availability.
+      Business name, phone number, category, opening hours, accessibility information, rating, review text, and photos are sourced from the company's public Google Business Profile. The scope of mechanical work (everything except transmission internals and body work) was provided directly by the owner. No prices, service packages, guarantees, or credentials have been added — call to confirm what's offered and current availability.
     </p>
   </div>
 </footer>
