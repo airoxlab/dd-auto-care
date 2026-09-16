@@ -18,7 +18,7 @@ Open `index.html` in a browser, or deploy the folder as-is to any static host (G
 
 Midnight blue with a wax-shine gold accent, taken from the mirror-black Cadillac in the business's own hero photo; the light theme resolves to warm cream and bronze rather than a flat inversion. Type is Sora (display) / Outfit (body). Palette is fully tokenised on `:root` and redefined for light mode under both `@media (prefers-color-scheme: light)` and `:root[data-theme="light"]`, so the page follows the OS theme and an explicit toggle. A "D&D" monogram stands in for a logo, since the business has no logo mark published anywhere.
 
-Seven sections: hero, services, maintenance (mobile mechanic scope: routine maintenance, brakes/steering/suspension, engine/electrical/cooling, plus what is not covered and how a mobile job works), work gallery, hours, reviews, contact — plus a strip and footer. The hours table is treated as the lead differentiator (weekend rows highlighted), because evening and weekend availability is the most distinctive verifiable fact about this business.
+Seven sections: hero, services, maintenance (mobile mechanic scope: routine maintenance, brakes/steering/suspension, engine/electrical/cooling, plus what is not covered and how a mobile job works), work gallery, hours, reviews, and a booking form (department selector: detailing / mobile repair & maintenance / both; composes the request into a text message to the shop's number, since no email is published) — plus a strip and footer. The hours table is treated as the lead differentiator (weekend rows highlighted), because evening and weekend availability is the most distinctive verifiable fact about this business.
 
 ## Data sources
 

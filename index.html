@@ -254,6 +254,28 @@
   .reply .lbl { display: block; font-style: normal; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.3rem; }
 
   /* ============ CONTACT ============ */
+
+  /* ---- booking form ---- */
+  .book { max-width: 720px; margin: 2.4rem auto 0; text-align: left; background: var(--panel); border: 1px solid var(--edge-solid); border-radius: 1rem; padding: 1.5rem; display: grid; gap: 1rem; }
+  .book .dept { border: 0; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+  .book .dept legend { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.6rem; }
+  .book .dept label { display: flex; align-items: center; gap: 0.6rem; background: var(--panel-hi); border: 1px solid var(--edge-solid); border-radius: 0.7rem; padding: 0.8rem 0.95rem; cursor: pointer; font-weight: 600; }
+  .book .dept label:has(input:checked) { border-color: var(--gold); box-shadow: inset 0 0 0 1px var(--gold); }
+  .book .dept input { accent-color: var(--gold); width: 1.05rem; height: 1.05rem; margin: 0; }
+  .book .row { display: grid; gap: 1rem; }
+  .book label { display: grid; gap: 0.35rem; font-size: 0.86rem; font-weight: 600; color: var(--mute); }
+  .book input[type="text"], .book input[type="tel"], .book textarea { width: 100%; font: inherit; font-size: 1rem; color: var(--ice); background: var(--night); border: 1px solid var(--edge-solid); border-radius: 0.6rem; padding: 0.75rem 0.85rem; }
+  .book input:focus, .book textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: var(--gold); }
+  .book textarea { resize: vertical; }
+  .book-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.4rem; }
+  .book .btn { cursor: pointer; font: inherit; font-weight: 600; }
+  .book-note { margin: 0; font-size: 0.82rem; color: var(--mute); }
+  .book-fallback[hidden] { display: none; }
+  .book-fallback { display: grid; gap: 0.6rem; background: var(--panel-hi); border: 1px dashed var(--gold); border-radius: 0.7rem; padding: 1rem; }
+  .book-fallback .lbl { margin: 0; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+  .book-fallback textarea { font-size: 0.92rem; }
+  .book .err { border-color: #d9534f !important; }
+  @media (min-width: 640px) { .book .dept { grid-template-columns: repeat(3, 1fr); } .book .row { grid-template-columns: 1fr 1fr; } }
   .contact { text-align: center; }
   .contact .lead { margin-inline: auto; }
   .contact .ctas { justify-content: center; }
@@ -285,7 +307,7 @@
         <a href="#work">Our work</a>
         <a href="#hours">Hours</a>
         <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Book</a>
       </nav>
       <a class="head-call" href="tel:+14196014587">Call (419) 601-4587</a>
     </header>
@@ -501,12 +523,40 @@
   <section id="contact" class="contact" aria-labelledby="h2c">
     <div class="wrap">
       <p class="eyebrow">Book a job</p>
-      <h2 id="h2c">Give us a call.</h2>
-      <p class="lead">Tell us what you're driving and what it needs &mdash; a repair, routine maintenance, a detail, or all three &mdash; and we'll find you a slot and come to you.</p>
+      <h2 id="h2c">Book a detail, a repair, or both.</h2>
+      <p class="lead">Fill in the form and it lands on our phone as a text &mdash; no call needed. Pick the department, tell us what you're driving and what it needs, and we'll come back with a time.</p>
       <div class="ctas">
         <a class="btn btn-solid" href="tel:+14196014587">Call (419) 601-4587</a>
         <a class="btn btn-line" href="sms:+14196014587">Send a text</a>
       </div>
+      <form class="book" id="bookForm" novalidate>
+        <fieldset class="dept">
+          <legend>Which department?</legend>
+          <label><input type="radio" name="dept" value="Detailing" checked><span>Detailing</span></label>
+          <label><input type="radio" name="dept" value="Mobile repair &amp; maintenance"><span>Mobile repair &amp; maintenance</span></label>
+          <label><input type="radio" name="dept" value="Both"><span>Both</span></label>
+        </fieldset>
+        <div class="row">
+          <label>Your name<input type="text" name="name" autocomplete="name" placeholder="First name is fine" required></label>
+          <label>Your phone<input type="tel" name="phone" autocomplete="tel" placeholder="(419) 555-0100" required></label>
+        </div>
+        <div class="row">
+          <label>Vehicle<input type="text" name="vehicle" placeholder="Year, make, model" required></label>
+          <label>Where is it?<input type="text" name="where" placeholder="Town or address" required></label>
+        </div>
+        <label>What does it need?<textarea name="details" rows="3" placeholder="Interior detail, brakes grinding, oil change, check-engine light&hellip;"></textarea></label>
+        <label>When works for you?<input type="text" name="when" placeholder="Weekday evening, Saturday morning, ASAP&hellip;"></label>
+        <div class="book-actions">
+          <button class="btn btn-solid" type="submit">Send request by text</button>
+          <a class="btn btn-line" href="tel:+14196014587">Or just call</a>
+        </div>
+        <p class="book-note" id="bookNote">Tapping send opens your messaging app with the request filled in for (419) 601-4587. Nothing is stored on this site.</p>
+        <div class="book-fallback" id="bookFallback" hidden>
+          <p class="lbl">Copy this and text it to (419) 601-4587</p>
+          <textarea id="bookText" rows="6" readonly></textarea>
+          <button class="btn btn-line" type="button" id="bookCopy">Copy message</button>
+        </div>
+      </form>
       <div class="cc">
         <div class="card">
           <h3>Phone</h3>
@@ -536,5 +586,50 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  var form = document.getElementById('bookForm');
+  if (!form) return;
+  var fallback = document.getElementById('bookFallback');
+  var out = document.getElementById('bookText');
+  var note = document.getElementById('bookNote');
+  function build() {
+    var f = form.elements;
+    var dept = form.querySelector('input[name="dept"]:checked');
+    var lines = [
+      'D & D Auto Care request',
+      'Department: ' + (dept ? dept.value.replace('&amp;', '&') : ''),
+      'Name: ' + f.name.value.trim(),
+      'Phone: ' + f.phone.value.trim(),
+      'Vehicle: ' + f.vehicle.value.trim(),
+      'Location: ' + f.where.value.trim()
+    ];
+    if (f.details.value.trim()) lines.push('Needs: ' + f.details.value.trim());
+    if (f.when.value.trim()) lines.push('When: ' + f.when.value.trim());
+    return lines.join('\n');
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var ok = true;
+    ['name', 'phone', 'vehicle', 'where'].forEach(function (n) {
+      var el = form.elements[n];
+      var bad = !el.value.trim();
+      el.classList.toggle('err', bad);
+      if (bad) ok = false;
+    });
+    if (!ok) { note.textContent = 'Please fill in your name, phone, vehicle and location.'; return; }
+    var msg = build();
+    out.value = msg;
+    fallback.hidden = false;
+    note.textContent = 'If your messaging app did not open, copy the message below and text it to (419) 601-4587.';
+    var sep = /iPhone|iPad|iPod/i.test(navigator.userAgent) ? '&' : '?';
+    window.location.href = 'sms:+14196014587' + sep + 'body=' + encodeURIComponent(msg);
+  });
+  document.getElementById('bookCopy').addEventListener('click', function () {
+    out.select();
+    try { navigator.clipboard.writeText(out.value); this.textContent = 'Copied'; } catch (e) { document.execCommand('copy'); this.textContent = 'Copied'; }
+  });
+})();
+</script>
 </body>
 </html>
